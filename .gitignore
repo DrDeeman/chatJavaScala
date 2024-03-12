@@ -1,0 +1,10 @@
+chatServer/.gradle
+chatServer/.idea
+chatServer/build
+chatServer/gradle
+
+
+testGradleScala/.gradle
+testGradleScala/.idea
+testGradleScala/build
+testGradleScala/gradle

@@ -2,6 +2,8 @@ apply plugin : "java"
 apply plugin: "application"
 apply plugin : 'scala'
 
+
+
 mainClassName = "app.Main"
 
 group = 'org.example'
@@ -19,12 +21,15 @@ sourceSets.test.java.srcDirs = ["/test/java"]
 
 dependencies {
     implementation 'org.scala-lang:scala-library:2.13.12'
+    implementation 'org.hibernate:hibernate-core:6.1.1.Final'
+    implementation 'org.postgresql:postgresql:42.6.0'
     implementation 'com.typesafe.akka:akka-actor-typed_3:2.6.19'
     implementation 'com.typesafe.akka:akka-stream_3:2.6.19'
     implementation 'com.typesafe.akka:akka-http_2.13:10.2.9'
     implementation 'org.mdedetrich:akka-http-circe_2.13:0.9.0'
-    implementation 'io.circe:circe-generic_2.12:0.14.1'
+    implementation 'net.liftweb:lift-json_2.13:3.5.0'
     implementation 'com.github.pureconfig:pureconfig_2.13:0.17.4'
+    implementation 'com.typesafe:config:1.4.3'
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
 

@@ -36,6 +36,9 @@ sourceSets.test.java.srcDirs = ["/test/java"]
 dependencies {
     implementation 'org.scala-lang:scala-library:2.13.12'
     implementation 'org.scalafx:scalafx_3:21.0.0-R32'
+    implementation 'org.springframework.boot:spring-boot-starter-web:3.1.2'
+    implementation 'io.circe:circe-core_2.11:0.3.0'
+    implementation 'io.circe:circe-parser_2.11:0.3.0'
     implementation 'com.github.pureconfig:pureconfig_2.13:0.17.4'
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'

@@ -1,11 +1,30 @@
 package app
 
-import pureconfig.ConfigSource
 
-case class ChatConfig(val host: String, val port: Integer);
+import akka.actor.typed.ActorSystem
+import akka.actor.typed.scaladsl.Behaviors
+import akka.http.scaladsl.Http
+import com.typesafe.config.ConfigFactory
+import pureconfig.*
+import pureconfig.generic.auto.*
+
+
+
 
 object Main {
-  def main(arg:Array[String]):Unit = {
-   // val config = ConfigSource.default.at("chat-config").load[ChatConfig]
+
+
+
+  def main(args:Array[String]):Unit = {
+
+    var rootBehavior = Behaviors.setup[Nothing]({context=>{
+         context.setLoggerName("loggerChat")
+         Behaviors.same
+    }})
+    ActorSystem[Nothing](rootBehavior,"ChatServer")
+    val chatConfig = ConfigFactory.load("chat.conf");
+    System.out.println(chatConfig.getInt("chat-config.port"));
+    //Http().newServerAt()
+
   }
 }
